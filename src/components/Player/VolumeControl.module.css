@@ -1,0 +1,13 @@
+/* VolumeControl — Team to style */
+.volumeControl {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.slider {
+    width: 100px;
+    height: 4px;
+    background: var(--color-surface-active);
+    border-radius: 999px;
+}

@@ -1,0 +1,14 @@
+/* HomePage — Team to style */
+.homePage {
+    padding: 0 24px 24px;
+}
+
+.greetingSection {
+    margin-bottom: 24px;
+}
+
+.greeting {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}

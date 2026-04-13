@@ -1,0 +1,28 @@
+/* ContentSection — Team to style */
+.section {
+    margin-bottom: 24px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 16px;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.showAll {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+}
+
+.cardRow {
+    display: flex;
+    gap: 16px;
+    overflow-x: auto;
+}

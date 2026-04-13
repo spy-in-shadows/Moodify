@@ -1,0 +1,30 @@
+/* RecentCard — Team to style */
+.card {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 4px;
+    overflow: hidden;
+    height: 56px;
+    cursor: pointer;
+}
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.14);
+}
+
+.image {
+    width: 56px;
+    height: 56px;
+    background: var(--color-surface-hover);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.title {
+    padding: 0 12px;
+    font-size: 13px;
+    font-weight: 700;
+}

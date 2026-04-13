@@ -1,0 +1,33 @@
+/* TrackInfo — Team to style */
+.trackInfo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.albumArt {
+    width: 56px;
+    height: 56px;
+    background: var(--color-surface-hover);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.textInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.trackName {
+    font-size: 13px;
+    color: var(--color-text-primary);
+}
+
+.artistName {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+}

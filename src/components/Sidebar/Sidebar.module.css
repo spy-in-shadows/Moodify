@@ -1,0 +1,32 @@
+/* Sidebar — Team to style */
+.sidebar {
+    width: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.navSection {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+.navItem {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 8px 0;
+    color: var(--color-text-secondary);
+    font-weight: 600;
+}
+
+.librarySection {
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}

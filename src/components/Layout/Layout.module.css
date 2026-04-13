@@ -1,0 +1,30 @@
+/* Layout — Structural grid only. Team to polish. */
+.layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.topSection {
+    display: flex;
+    flex: 1;
+    overflow: hidden;
+    padding: 8px;
+    gap: 8px;
+}
+
+.mainContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    background: var(--color-surface-raised);
+    border-radius: 8px;
+    min-width: 0;
+}
+
+.scrollArea {
+    flex: 1;
+    overflow-y: auto;
+}

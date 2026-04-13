@@ -1,0 +1,6 @@
+/* ExtraControls — Team to style */
+.extraControls {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}

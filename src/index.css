@@ -1,0 +1,108 @@
+/* ==========================================================================
+   Moodify — Global Styles & Design System
+   Spotify-inspired dark theme with green accent
+   
+   NOTE FOR TEAM: This file defines the design tokens (CSS custom properties)
+   used throughout all component CSS modules. Modify these values to change
+   the global theme — all components will update automatically.
+   ========================================================================== */
+
+:root {
+  /* Core palette */
+  --color-bg: #121212;
+  --color-surface: #121212;
+  --color-surface-raised: #181818;
+  --color-surface-hover: #282828;
+  --color-surface-active: #333333;
+  --color-card: #181818;
+  --color-card-hover: #282828;
+
+  /* Accent */
+  --color-accent: #1DB954;
+  --color-accent-hover: #1ed760;
+
+  /* Text */
+  --color-text-primary: #FFFFFF;
+  --color-text-secondary: #B3B3B3;
+  --color-text-muted: #6A6A6A;
+
+  /* Borders */
+  --color-border: #282828;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+/* ---------- Global Reset ---------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 14px;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  overflow: hidden;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--color-text-primary);
+  font-weight: 700;
+}
+
+p {
+  color: var(--color-text-secondary);
+}
+
+a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+}
+
+button {
+  font-family: var(--font-family);
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--color-text-primary);
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-active);
+  border-radius: 999px;
+}

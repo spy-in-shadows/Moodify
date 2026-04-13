@@ -1,0 +1,17 @@
+/* PlaybackControls — Team to style */
+.controls {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.playButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}

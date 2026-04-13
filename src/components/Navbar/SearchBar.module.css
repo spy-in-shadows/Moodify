@@ -1,0 +1,15 @@
+/* SearchBar — Team to style */
+.searchBar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: var(--color-surface-hover);
+    border-radius: 999px;
+    width: 100%;
+}
+
+.placeholder {
+    color: var(--color-text-muted);
+    font-size: 14px;
+}

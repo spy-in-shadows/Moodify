@@ -1,0 +1,21 @@
+/* ProgressBar — Team to style */
+.progressContainer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.time {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    min-width: 32px;
+    text-align: center;
+}
+
+.bar {
+    flex: 1;
+    height: 4px;
+    background: var(--color-surface-active);
+    border-radius: 999px;
+}

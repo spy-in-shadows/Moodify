@@ -1,0 +1,16 @@
+/* FilterChips — Team to style */
+.container {
+    display: flex;
+    gap: 8px;
+    padding: 8px 16px;
+}
+
+.chip {
+    padding: 4px 12px;
+    border-radius: 999px;
+    background: var(--color-surface-hover);
+    color: var(--color-text-primary);
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+}
