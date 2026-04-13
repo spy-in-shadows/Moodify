@@ -1,0 +1,290 @@
+{
+  "tracks": {
+    "href": "https://api.spotify.com/v1/search?query=starboy&type=track&offset=0&limit=20",
+    "limit": 20,
+    "next": "https://api.spotify.com/v1/search?query=starboy&type=track&offset=20&limit=20",
+    "offset": 0,
+    "previous": null,
+    "total": 2,
+    "items": [
+      {
+        "album": {
+          "album_type": "album",
+          "total_tracks": 18,
+          "available_markets": ["IN", "US", "GB"],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/2ODvWsOgouMbaA5xf0RkJe"
+          },
+          "href": "https://api.spotify.com/v1/albums/2ODvWsOgouMbaA5xf0RkJe",
+          "id": "2ODvWsOgouMbaA5xf0RkJe",
+          "images": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452",
+              "height": 640,
+              "width": 640
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d00001e024718e2b124f79258be7bc452",
+              "height": 300,
+              "width": 300
+            },
+            {
+              "url": "https://i.scdn.co/image/ab67616d000048514718e2b124f79258be7bc452",
+              "height": 64,
+              "width": 64
+            }
+          ],
+          "name": "Starboy",
+          "release_date": "2016-11-25",
+          "release_date_precision": "day",
+          "type": "album",
+          "uri": "spotify:album:2ODvWsOgouMbaA5xf0RkJe",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+              },
+              "href": "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ",
+              "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+              "name": "The Weeknd",
+              "type": "artist",
+              "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+            }
+          ]
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+            },
+            "href": "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ",
+            "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+            "name": "The Weeknd",
+            "type": "artist",
+            "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+          },
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1zNqQNIdeOUZHb8zbZRFMX"
+            },
+            "href": "https://api.spotify.com/v1/artists/1zNqQNIdeOUZHb8zbZRFMX",
+            "id": "1zNqQNIdeOUZHb8zbZRFMX",
+            "name": "Daft Punk",
+            "type": "artist",
+            "uri": "spotify:artist:1zNqQNIdeOUZHb8zbZRFMX"
+          }
+        ],
+        "available_markets": ["IN", "US", "GB"],
+        "disc_number": 1,
+        "duration_ms": 230453,
+        "explicit": true,
+        "external_ids": {
+          "isrc": "USUG11600995"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/7MXVkk9YMctZqd1Srtv4MB"
+        },
+        "href": "https://api.spotify.com/v1/tracks/7MXVkk9YMctZqd1Srtv4MB",
+        "id": "7MXVkk9YMctZqd1Srtv4MB",
+        "is_playable": true,
+        "name": "Starboy",
+        "popularity": 92,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:7MXVkk9YMctZqd1Srtv4MB",
+        "is_local": false
+      },
+      {
+        "album": {
+          "album_type": "single",
+          "total_tracks": 1,
+          "available_markets": ["IN", "US", "GB"],
+          "external_urls": {
+            "spotify": "https://open.spotify.com/album/1111111111111111111111"
+          },
+          "href": "https://api.spotify.com/v1/albums/1111111111111111111111",
+          "id": "1111111111111111111111",
+          "images": [
+            {
+              "url": "https://i.scdn.co/image/ab67616d0000b273111111111111111111111111",
+              "height": 640,
+              "width": 640
+            }
+          ],
+          "name": "Starboy Remix",
+          "release_date": "2017-02-10",
+          "release_date_precision": "day",
+          "type": "album",
+          "uri": "spotify:album:1111111111111111111111",
+          "artists": [
+            {
+              "external_urls": {
+                "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+              },
+              "href": "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ",
+              "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+              "name": "The Weeknd",
+              "type": "artist",
+              "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+            }
+          ]
+        },
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+            },
+            "href": "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ",
+            "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+            "name": "The Weeknd",
+            "type": "artist",
+            "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+          }
+        ],
+        "available_markets": ["IN", "US", "GB"],
+        "disc_number": 1,
+        "duration_ms": 225000,
+        "explicit": false,
+        "external_ids": {
+          "isrc": "USUG11700001"
+        },
+        "external_urls": {
+          "spotify": "https://open.spotify.com/track/2222222222222222222222"
+        },
+        "href": "https://api.spotify.com/v1/tracks/2222222222222222222222",
+        "id": "2222222222222222222222",
+        "is_playable": true,
+        "name": "Starboy Remix",
+        "popularity": 67,
+        "preview_url": null,
+        "track_number": 1,
+        "type": "track",
+        "uri": "spotify:track:2222222222222222222222",
+        "is_local": false
+      }
+    ]
+  },
+  "artists": {
+    "href": "https://api.spotify.com/v1/search?query=starboy&type=artist&offset=0&limit=20",
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 1,
+    "items": [
+      {
+        "external_urls": {
+          "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+        },
+        "followers": {
+          "href": null,
+          "total": 95000000
+        },
+        "genres": ["canadian contemporary r&b", "pop"],
+        "href": "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ",
+        "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab6761610000e5eb111111111111111111111111",
+            "height": 640,
+            "width": 640
+          }
+        ],
+        "name": "The Weeknd",
+        "popularity": 95,
+        "type": "artist",
+        "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+      }
+    ]
+  },
+  "albums": {
+    "href": "https://api.spotify.com/v1/search?query=starboy&type=album&offset=0&limit=20",
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 1,
+    "items": [
+      {
+        "album_type": "album",
+        "total_tracks": 18,
+        "available_markets": ["IN", "US", "GB"],
+        "external_urls": {
+          "spotify": "https://open.spotify.com/album/2ODvWsOgouMbaA5xf0RkJe"
+        },
+        "href": "https://api.spotify.com/v1/albums/2ODvWsOgouMbaA5xf0RkJe",
+        "id": "2ODvWsOgouMbaA5xf0RkJe",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab67616d0000b2734718e2b124f79258be7bc452",
+            "height": 640,
+            "width": 640
+          }
+        ],
+        "name": "Starboy",
+        "release_date": "2016-11-25",
+        "release_date_precision": "day",
+        "type": "album",
+        "uri": "spotify:album:2ODvWsOgouMbaA5xf0RkJe",
+        "artists": [
+          {
+            "external_urls": {
+              "spotify": "https://open.spotify.com/artist/1Xyo4u8uXC1ZmMpatF05PJ"
+            },
+            "href": "https://api.spotify.com/v1/artists/1Xyo4u8uXC1ZmMpatF05PJ",
+            "id": "1Xyo4u8uXC1ZmMpatF05PJ",
+            "name": "The Weeknd",
+            "type": "artist",
+            "uri": "spotify:artist:1Xyo4u8uXC1ZmMpatF05PJ"
+          }
+        ]
+      }
+    ]
+  },
+  "playlists": {
+    "href": "https://api.spotify.com/v1/search?query=starboy&type=playlist&offset=0&limit=20",
+    "limit": 20,
+    "next": null,
+    "offset": 0,
+    "previous": null,
+    "total": 1,
+    "items": [
+      {
+        "collaborative": false,
+        "description": "Best of The Weeknd and related tracks.",
+        "external_urls": {
+          "spotify": "https://open.spotify.com/playlist/37i9dQZF1DXcBWIGoYBM5M"
+        },
+        "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M",
+        "id": "37i9dQZF1DXcBWIGoYBM5M",
+        "images": [
+          {
+            "url": "https://i.scdn.co/image/ab67706f00000002111111111111111111111111",
+            "height": 640,
+            "width": 640
+          }
+        ],
+        "name": "Starboy Vibes",
+        "owner": {
+          "external_urls": {
+            "spotify": "https://open.spotify.com/user/spotify"
+          },
+          "href": "https://api.spotify.com/v1/users/spotify",
+          "id": "spotify",
+          "type": "user",
+          "uri": "spotify:user:spotify",
+          "display_name": "Spotify"
+        },
+        "public": true,
+        "snapshot_id": "MCwwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAwMDAw",
+        "tracks": {
+          "href": "https://api.spotify.com/v1/playlists/37i9dQZF1DXcBWIGoYBM5M/tracks",
+          "total": 42
+        },
+        "type": "playlist",
+        "uri": "spotify:playlist:37i9dQZF1DXcBWIGoYBM5M"
+      }
+    ]
+  }
+}
