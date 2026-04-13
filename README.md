@@ -41,22 +41,27 @@ Moodify was built as a learning project to improve React skills by creating a re
 
 ### Installation
 
+```bash
 git clone https://github.com/your-username/moodify.git
 cd moodify
 npm install
 npm run dev
+```
 
 ---
 
 ## 📦 Build for Production
 
+```bash
 npm run build
 npm run preview
+```
 
 ---
 
 ## 📁 Folder Structure
 
+```bash
 moodify/
 ├── public/
 ├── src/
@@ -69,12 +74,13 @@ moodify/
 │   └── index.css
 ├── package.json
 └── README.md
+```
 
 ---
 
 ## 🌐 GitHub Repository
 
-🔗 https://github.com/your-username/moodify
+🔗 https://github.com/spy-in-shadows/Moodify
 
 ---
 
