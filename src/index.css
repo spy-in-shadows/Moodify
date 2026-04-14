@@ -42,13 +42,19 @@
   box-sizing: border-box;
 }
 
+html, body {
+  background-color: var(--color-bg);
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
 body {
   font-family: var(--font-family);
   font-size: 14px;
   color: var(--color-text-primary);
-  background-color: var(--color-bg);
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 100%;
   -webkit-font-smoothing: antialiased;
 }
 

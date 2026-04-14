@@ -10,6 +10,17 @@
     margin-bottom: 16px;
 }
 
+.titleGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: var(--color-text-secondary);
+}
+
 .title {
     font-size: 24px;
     font-weight: 700;

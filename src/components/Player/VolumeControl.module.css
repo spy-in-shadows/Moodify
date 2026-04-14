@@ -5,9 +5,43 @@
     gap: 8px;
 }
 
-.slider {
-    width: 100px;
+.controlBtn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.controlBtn:hover {
+    color: var(--color-text-primary);
+}
+
+.barContainer {
+    width: 90px;
+    height: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.barContainer:hover .barProgress {
+    background-color: var(--color-accent);
+}
+
+.barBg {
+    width: 100%;
     height: 4px;
     background: var(--color-surface-active);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.barProgress {
+    height: 100%;
+    background-color: white;
     border-radius: 999px;
 }

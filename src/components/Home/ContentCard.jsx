@@ -19,16 +19,30 @@
 
 import styles from './ContentCard.module.css';
 
-export default function ContentCard() {
+export default function ContentCard({ item }) {
+  if (!item) return null;
+  // If it's an artist, the image is a circle.
+  const isArtist = item.type === 'Artist';
+
   return (
     <div className={styles.card}>
       <div className={styles.imageContainer}>
-        <div className={styles.imagePlaceholder}>🎵</div>
-        {/* TODO: Green play button here */}
+        <img 
+          src={item.image} 
+          alt={item.title} 
+          className={styles.image} 
+          style={{ borderRadius: isArtist ? '50%' : '8px' }}
+        />
+        {/* Play button here */}
+        <div className={styles.playButtonWrapper}>
+          <button className={styles.playButton} aria-label="Play">
+            ▶
+          </button>
+        </div>
       </div>
       <div className={styles.info}>
-        <span className={styles.title}>Card Title</span>
-        <span className={styles.description}>Card description goes here</span>
+        <span className={styles.title} style={{ display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.title}</span>
+        <span className={styles.description} style={{ display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.description}</span>
       </div>
     </div>
   );

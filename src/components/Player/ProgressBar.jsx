@@ -12,9 +12,13 @@ import styles from './ProgressBar.module.css';
 export default function ProgressBar() {
   return (
     <div className={styles.progressContainer}>
-      <span className={styles.time}>0:00</span>
-      <div className={styles.bar}>{/* TODO: Range input slider */}</div>
-      <span className={styles.time}>3:50</span>
+      <span className={styles.time}>1:14</span>
+      <div className={styles.barContainer}>
+        <div className={styles.barBg}>
+          <div className={styles.barProgress} style={{ width: '30%' }}></div>
+        </div>
+      </div>
+      <span className={styles.time}>4:17</span>
     </div>
   );
 }

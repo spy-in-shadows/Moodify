@@ -2,5 +2,20 @@
 .extraControls {
     display: flex;
     align-items: center;
-    gap: 4px;
+    gap: 16px;
+}
+
+.controlBtn {
+    background: transparent;
+    border: none;
+    color: var(--color-text-secondary);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+}
+
+.controlBtn:hover {
+    color: var(--color-text-primary);
 }

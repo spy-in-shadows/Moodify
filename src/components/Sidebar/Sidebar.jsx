@@ -18,12 +18,6 @@ import PlaylistList from './PlaylistList';
 export default function Sidebar() {
   return (
     <aside className={styles.sidebar}>
-      {/* Navigation section */}
-      <nav className={styles.navSection}>
-        <div className={styles.navItem}>🏠 Home</div>
-        <div className={styles.navItem}>🔍 Search</div>
-      </nav>
-
       {/* Library section */}
       <div className={styles.librarySection}>
         <LibraryHeader />

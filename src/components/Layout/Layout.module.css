@@ -12,6 +12,7 @@
     overflow: hidden;
     padding: 8px;
     gap: 8px;
+    background: var(--color-bg);
 }
 
 .mainContent {

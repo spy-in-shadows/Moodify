@@ -18,6 +18,7 @@ export default function FilterChips() {
     <div className={styles.container}>
       <button className={styles.chip}>Playlists</button>
       <button className={styles.chip}>Artists</button>
+      <button className={styles.chip}>Albums</button>
     </div>
   );
 }

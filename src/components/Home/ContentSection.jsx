@@ -18,20 +18,20 @@
 import styles from './ContentSection.module.css';
 import ContentCard from './ContentCard';
 
-export default function ContentSection({ title = 'Section Title' }) {
+export default function ContentSection({ title = 'Section Title', subtitle, items = [] }) {
   return (
     <section className={styles.section}>
       <div className={styles.header}>
-        <h2 className={styles.title}>{title}</h2>
+        <div className={styles.titleGroup}>
+          {subtitle && <span className={styles.subtitle}>{subtitle}</span>}
+          <h2 className={styles.title}>{title}</h2>
+        </div>
         <span className={styles.showAll}>Show all</span>
       </div>
       <div className={styles.cardRow}>
-        {/* TODO: Map over items data */}
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
-        <ContentCard />
+        {items.map((item, index) => (
+          <ContentCard key={item.id || index} item={item} />
+        ))}
       </div>
     </section>
   );
