@@ -1,17 +1,33 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
+import Sidebar from '../components/sidebar/Sidebar.jsx'
 import CollectionPage from '../pages/CollectionPage/CollectionPage.jsx'
 import HomePage from '../pages/HomePage/HomePage.jsx'
 import LibraryPage from '../pages/LibraryPage/LibraryPage.jsx'
 import SearchPage from '../pages/SearchPage/SearchPage.jsx'
 
+const AppShell = () => {
+  return (
+    <div className="app-shell">
+      <Sidebar />
+      <div className="app-shell__main">
+        <div className="app-shell__content">
+          <Outlet />
+        </div>
+      </div>
+    </div>
+  )
+}
+
 const AppRouter = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/search" element={<SearchPage />} />
-        <Route path="/library" element={<LibraryPage />} />
-        <Route path="/collection/:type/:id" element={<CollectionPage />} />
+        <Route element={<AppShell />}>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/search" element={<SearchPage />} />
+          <Route path="/library" element={<LibraryPage />} />
+          <Route path="/collection/:type/:id" element={<CollectionPage />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
