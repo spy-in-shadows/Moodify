@@ -1,0 +1,93 @@
+export const albums = [
+  {
+    id: 'album-afterglow-city',
+    title: 'Afterglow City',
+    artist: 'Luna Harbor',
+    artistId: 'artist-luna-harbor',
+    cover: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?auto=format&fit=crop&w=800&q=80',
+    year: 2024,
+    description: 'Late-night synth-pop built for city lights, window-seat views, and endless neon reflections.',
+    trackIds: ['track-midnight-lane', 'track-neon-hearts', 'track-after-rain'],
+  },
+  {
+    id: 'album-static-bloom',
+    title: 'Static Bloom',
+    artist: 'Neon District',
+    artistId: 'artist-neon-district',
+    cover: 'https://images.unsplash.com/photo-1501386761578-eac5c94b800a?auto=format&fit=crop&w=800&q=80',
+    year: 2023,
+    description: 'Punchy alt-pop hooks with a polished electronic edge and just enough noise to feel alive.',
+    trackIds: ['track-pulse-check', 'track-glass-signal'],
+  },
+  {
+    id: 'album-golden-hour-theory',
+    title: 'Golden Hour Theory',
+    artist: 'Sol Kite',
+    artistId: 'artist-sol-kite',
+    cover: 'https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80',
+    year: 2025,
+    description: 'Open-air choruses, sunlit acoustics, and easy momentum for weekends that stretch on forever.',
+    trackIds: ['track-sunline', 'track-open-skies'],
+  },
+  {
+    id: 'album-soft-static',
+    title: 'Soft Static',
+    artist: 'Iris Afterglow',
+    artistId: 'artist-iris-afterglow',
+    cover: 'https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=800&q=80',
+    year: 2022,
+    description: 'Dream-pop textures and soft-focus melodies that sit perfectly between rest and daydreaming.',
+    trackIds: ['track-parachute-club', 'track-halo-season'],
+  },
+  {
+    id: 'album-northbound-echoes',
+    title: 'Northbound Echoes',
+    artist: 'Atlas Run',
+    artistId: 'artist-atlas-run',
+    cover: 'https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?auto=format&fit=crop&w=800&q=80',
+    year: 2021,
+    description: 'Wide-screen indie rock for long drives, summit views, and momentum-heavy playlists.',
+    trackIds: ['track-free-fall-fiction', 'track-mile-marker'],
+  },
+  {
+    id: 'album-mirror-motel',
+    title: 'Mirror Motel',
+    artist: 'Velvet Circuit',
+    artistId: 'artist-velvet-circuit',
+    cover: 'https://images.unsplash.com/photo-1499415479124-43c32433a620?auto=format&fit=crop&w=800&q=80',
+    year: 2024,
+    description: 'Glossy dance-pop with chrome-lined grooves, hotel-lobby drama, and instant replay value.',
+    trackIds: ['track-chrome-kiss', 'track-lobby-lights'],
+  },
+  {
+    id: 'album-orbit-for-two',
+    title: 'Orbit for Two',
+    artist: 'Nova Choir',
+    artistId: 'artist-nova-choir',
+    cover: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=800&q=80',
+    year: 2025,
+    description: 'Cinematic electronic pop that feels equal parts stargazing soundtrack and late-night confession.',
+    trackIds: ['track-star-map', 'track-zero-gravity-slowdance', 'track-satellite-summer'],
+  },
+  {
+    id: 'album-tidal-letters',
+    title: 'Tidal Letters',
+    artist: 'Paper Moons',
+    artistId: 'artist-paper-moons',
+    cover: 'https://images.unsplash.com/photo-1511379938547-c1f69419868d?auto=format&fit=crop&w=800&q=80',
+    year: 2023,
+    description: 'Coastal indie-pop full of handwritten details, sea breeze textures, and postcard-sized stories.',
+    trackIds: ['track-silver-notes', 'track-blue-postcards'],
+  },
+]
+
+export const albumsById = Object.fromEntries(albums.map((album) => [album.id, album]))
+
+export const newReleaseAlbumIds = [
+  'album-golden-hour-theory',
+  'album-afterglow-city',
+  'album-mirror-motel',
+  'album-orbit-for-two',
+]
+
+export default albums
