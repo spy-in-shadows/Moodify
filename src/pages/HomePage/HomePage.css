@@ -1,0 +1,128 @@
+.home-page {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.home-page__hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 0.9fr);
+  gap: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.5rem;
+  background:
+    radial-gradient(circle at top left, rgba(29, 185, 84, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(35, 35, 35, 0.96), rgba(16, 16, 16, 0.98));
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.24);
+}
+
+.home-page__hero-copy {
+  display: grid;
+  gap: 1rem;
+  align-content: center;
+  max-width: 40rem;
+}
+
+.home-page__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-page__title,
+.home-page__description,
+.home-page__hero-label,
+.home-page__stat-value,
+.home-page__stat-label {
+  margin: 0;
+}
+
+.home-page__title {
+  font-size: clamp(2.4rem, 4vw, 4.25rem);
+  line-height: 0.98;
+  letter-spacing: -0.04em;
+}
+
+.home-page__description {
+  max-width: 34rem;
+  color: var(--color-text-secondary, #b3b3b3);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.home-page__hero-panel {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+  padding: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 1.25rem;
+  background: rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(14px);
+}
+
+.home-page__hero-label {
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.home-page__hero-stats {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.home-page__stat {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+  border-radius: 1rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.home-page__stat-value {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.home-page__stat-label {
+  color: var(--color-text-secondary, #b3b3b3);
+  font-size: 0.95rem;
+}
+
+.home-page__section {
+  display: grid;
+  gap: 0.25rem;
+}
+
+@media (max-width: 960px) {
+  .home-page__hero {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page__hero-copy {
+    max-width: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .home-page {
+    gap: 2rem;
+  }
+
+  .home-page__hero {
+    padding: 1.5rem;
+    border-radius: 1.25rem;
+  }
+}
