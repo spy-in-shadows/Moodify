@@ -20,16 +20,29 @@
     display: flex;
     flex-direction: column;
     gap: 2px;
+    min-width: 0;
 }
 
 .trackName {
     font-size: 13px;
     color: var(--color-text-primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .artistName {
     font-size: 11px;
     color: var(--color-text-secondary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.status {
+    font-size: 11px;
+    color: var(--color-text-secondary);
+    margin-left: auto;
 }
 
 .checkBtn {
@@ -40,5 +53,5 @@
     align-items: center;
     justify-content: center;
     padding: 0;
-    margin-left: 12px;
+    margin-left: 8px;
 }

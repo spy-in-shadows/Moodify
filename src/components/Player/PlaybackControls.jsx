@@ -10,8 +10,11 @@
  */
 
 import styles from './PlaybackControls.module.css';
+import { usePlayer } from '../../context/PlayerContext';
 
 export default function PlaybackControls() {
+  const { currentTrack, isPlaying, togglePlay } = usePlayer();
+
   return (
     <div className={styles.controls}>
       <button className={styles.controlBtn}>
@@ -20,8 +23,22 @@ export default function PlaybackControls() {
       <button className={styles.controlBtn}>
         <svg role="img" height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3.3 1a.7.7 0 0 1 .7.7v5.15l9.9-5.744a.7.7 0 0 1 1.05.606v12.575a.7.7 0 0 1-1.05.607L4 9.149V14.3a.7.7 0 0 1-.7.7H1.7a.7.7 0 0 1-.7-.7V1.7a.7.7 0 0 1 .7-.7h1.6z"></path></svg>
       </button>
-      <button className={styles.playButton}>
-        <svg role="img" height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path></svg>
+      <button
+        className={styles.playButton}
+        type="button"
+        onClick={togglePlay}
+        aria-label={isPlaying ? 'Pause current track' : 'Play current track'}
+        disabled={!currentTrack}
+      >
+        {isPlaying ? (
+          <svg role="img" height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M2.7 1A.7.7 0 0 0 2 1.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7A.7.7 0 0 0 5.3 1H2.7zm8 0a.7.7 0 0 0-.7.7v12.6a.7.7 0 0 0 .7.7h2.6a.7.7 0 0 0 .7-.7V1.7A.7.7 0 0 0 13.3 1h-2.6z"></path>
+          </svg>
+        ) : (
+          <svg role="img" height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
+            <path d="M3 1.713a.7.7 0 0 1 1.05-.607l10.89 6.288a.7.7 0 0 1 0 1.212L4.05 14.894A.7.7 0 0 1 3 14.288V1.713z"></path>
+          </svg>
+        )}
       </button>
       <button className={styles.controlBtn}>
         <svg role="img" height="16" width="16" viewBox="0 0 16 16" fill="currentColor"><path d="M12.7 1a.7.7 0 0 0-.7.7v5.15L2.1 1.106A.7.7 0 0 0 1.05 1.712v12.575a.7.7 0 0 0 1.05.607L12 9.149V14.3a.7.7 0 0 0 .7.7h1.6a.7.7 0 0 0 .7-.7V1.7a.7.7 0 0 0-.7-.7h-1.6z"></path></svg>

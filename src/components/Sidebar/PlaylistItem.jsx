@@ -16,22 +16,27 @@
 
 import styles from './PlaylistItem.module.css';
 
-export default function PlaylistItem({ item }) {
+export default function PlaylistItem({ item, isActive = false, onClick }) {
   if (!item) return null;
   return (
-    <div className={styles.item}>
+    <button
+      type="button"
+      className={`${styles.item} ${isActive ? styles.active : ''}`}
+      onClick={onClick}
+      aria-pressed={isActive}
+    >
       <div 
         className={styles.imageContainer} 
-        style={{ borderRadius: item.isArtist ? '50%' : '4px' }}
+        style={{ borderRadius: '4px' }}
       >
-        <img src={item.image} alt={item.name} className={styles.image} />
+        <img src={item.cover} alt={item.title} className={styles.image} />
       </div>
       <div className={styles.info}>
-        <span className={styles.name} style={{ display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.name}</span>
+        <span className={styles.name} style={{ display: '-webkit-box', WebkitLineClamp: 1, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>{item.title}</span>
         <span className={styles.meta}>
-          {item.type} {item.owner && `• ${item.owner}`}
+          {item.artist} {item.meta && `• ${item.meta}`}
         </span>
       </div>
-    </div>
+    </button>
   );
 }

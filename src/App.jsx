@@ -8,9 +8,14 @@
  */
 
 import Layout from './components/Layout/Layout';
+import { PlayerProvider } from './context/PlayerContext';
 
 function App() {
-  return <Layout />;
+  return (
+    <PlayerProvider>
+      <Layout />
+    </PlayerProvider>
+  );
 }
 
 export default App;
