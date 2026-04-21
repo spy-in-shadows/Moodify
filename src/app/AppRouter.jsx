@@ -1,6 +1,7 @@
 import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom'
 import PlayerBar from '../components/player/PlayerBar.jsx'
 import Sidebar from '../components/sidebar/Sidebar.jsx'
+import Topbar from '../components/topbar/Topbar.jsx'
 import CollectionPage from '../pages/CollectionPage/CollectionPage.jsx'
 import HomePage from '../pages/HomePage/HomePage.jsx'
 import LibraryPage from '../pages/LibraryPage/LibraryPage.jsx'
@@ -13,6 +14,7 @@ const AppShell = () => {
         <Sidebar />
         <div className="app-shell__main">
           <div className="app-shell__content">
+            <Topbar />
             <Outlet />
           </div>
         </div>
