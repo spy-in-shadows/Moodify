@@ -275,6 +275,21 @@
   border-radius: var(--radius-lg);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.04);
+  width: 100%;
+  text-align: left;
+}
+
+.library-page__recent-row:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.05);
+  transform: translateY(-1px);
+}
+
+.library-page__recent-row--active {
+  border-color: rgba(30, 215, 96, 0.32);
+  background:
+    linear-gradient(135deg, rgba(30, 215, 96, 0.12), rgba(255, 255, 255, 0.04)),
+    rgba(255, 255, 255, 0.04);
 }
 
 .library-page__recent-rank {
@@ -297,6 +312,10 @@
 
 .library-page__recent-copy h3 {
   font-size: 1rem;
+}
+
+.library-page__recent-row--active .library-page__recent-copy h3 {
+  color: var(--color-accent);
 }
 
 .library-page__recent-copy p {
