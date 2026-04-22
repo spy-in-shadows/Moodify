@@ -77,6 +77,17 @@ const sortedArtists = [...artists].sort(
 )
 const sortedPlaylists = [...playlists].sort((left, right) => left.title.localeCompare(right.title))
 
+const countCategoryMatches = (category) => {
+  const needle = normalizeText(category.label)
+
+  return [
+    ...tracks.map(trackFields),
+    ...albums.map(albumFields),
+    ...artists.map(artistFields),
+    ...playlists.map(playlistFields),
+  ].filter((fields) => includesNeedle(fields, needle)).length
+}
+
 const SearchPage = () => {
   const [query, setQuery] = useState('')
   const [selectedCategoryId, setSelectedCategoryId] = useState('all')
@@ -84,6 +95,7 @@ const SearchPage = () => {
   const activeCategory = browseCategories.find((category) => category.id === selectedCategoryId) ?? null
   const normalizedQuery = normalizeText(query)
   const normalizedCategory = normalizeText(activeCategory?.label)
+  const hasQuery = Boolean(normalizedQuery)
   const hasActiveFilters = Boolean(normalizedQuery || activeCategory)
 
   const matchesFilters = (fields) =>
@@ -172,6 +184,13 @@ const SearchPage = () => {
     ? `${totalMatches} result${totalMatches === 1 ? '' : 's'} across tracks, albums, artists, and playlists`
     : 'Browse the catalog by mood, genre, artist, playlist, or album'
 
+  const noResultsTitle =
+    hasQuery && activeCategory
+      ? `No matches for "${query.trim()}" in ${activeCategory.label}`
+      : hasQuery
+        ? `No matches for "${query.trim()}"`
+        : `No ${activeCategory?.label ?? ''} matches yet`
+
   return (
     <main className="search-page">
       <section className="search-page__hero">
@@ -246,27 +265,69 @@ const SearchPage = () => {
       {hasActiveFilters && totalMatches === 0 ? (
         <section className="search-page__empty">
           <p className="search-page__empty-label">No matches found</p>
-          <h2 className="search-page__empty-title">Try a broader search or another browse chip.</h2>
+          <h2 className="search-page__empty-title">{noResultsTitle}</h2>
           <p className="search-page__empty-copy">
-            Matching checks local titles, artists, albums, playlist themes, moods, and tags.
+            Try a shorter phrase, choose a different category, or clear filters to browse
+            every track, album, artist, and playlist in the local catalog.
           </p>
+          <button
+            type="button"
+            className="search-page__empty-action"
+            onClick={() => {
+              setQuery('')
+              setSelectedCategoryId('all')
+            }}
+          >
+            Reset search
+          </button>
         </section>
       ) : (
-        <div className="search-page__results">
-          {sections
-            .filter((section) => section.items.length > 0)
-            .map((section) => (
-              <section key={section.id} className="search-page__section">
-                <SectionHeader
-                  title={section.title}
-                  subtitle={`${section.subtitle} ${section.items.length} shown.`}
-                />
-                <ContentRow columns="four">
-                  {section.items.map(section.renderCard)}
-                </ContentRow>
-              </section>
-            ))}
-        </div>
+        <>
+          {!hasQuery ? (
+            <section className="search-page__browse">
+              <SectionHeader
+                title="Browse all"
+                subtitle="Start with a mood or activity, then refine with the search bar above."
+              />
+              <div className="search-page__browse-grid">
+                {browseCategories.map((category) => (
+                  <button
+                    key={category.id}
+                    type="button"
+                    className={`search-page__browse-card${selectedCategoryId === category.id ? ' search-page__browse-card--active' : ''}`}
+                    onClick={() =>
+                      setSelectedCategoryId((currentId) =>
+                        currentId === category.id ? 'all' : category.id,
+                      )
+                    }
+                    style={{ '--search-card-accent': category.color }}
+                  >
+                    <span className="search-page__browse-title">{category.label}</span>
+                    <span className="search-page__browse-meta">
+                      {countCategoryMatches(category)} local matches
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </section>
+          ) : null}
+
+          <div className="search-page__results">
+            {sections
+              .filter((section) => section.items.length > 0)
+              .map((section) => (
+                <section key={section.id} className="search-page__section">
+                  <SectionHeader
+                    title={section.title}
+                    subtitle={`${section.subtitle} ${section.items.length} shown.`}
+                  />
+                  <ContentRow columns="four">
+                    {section.items.map(section.renderCard)}
+                  </ContentRow>
+                </section>
+              ))}
+          </div>
+        </>
       )}
     </main>
   )
