@@ -3,6 +3,7 @@ import { albums } from '../../data/albums.js'
 import { artists } from '../../data/artists.js'
 import { libraryPlaylistIds, playlists } from '../../data/playlists.js'
 import { tracks, tracksById } from '../../data/tracks.js'
+import { usePlayer } from '../../context/PlayerContext.jsx'
 import {
   formatDuration,
   formatListeners,
@@ -122,8 +123,21 @@ const ArtistCard = ({ artist }) => (
   </article>
 )
 
-const RecentTrackRow = ({ track, index }) => (
-  <article className="library-page__recent-row">
+const toPlayerTrack = (track) => ({
+  id: track.id,
+  title: track.title,
+  artist: track.artist,
+  cover: track.cover,
+  duration: track.duration,
+})
+
+const RecentTrackRow = ({ track, index, isActive, onSelect }) => (
+  <button
+    type="button"
+    className={`library-page__recent-row ${isActive ? 'library-page__recent-row--active' : ''}`}
+    onClick={() => onSelect(track)}
+    aria-pressed={isActive}
+  >
     <div className="library-page__recent-rank">{String(index + 1).padStart(2, '0')}</div>
     <img className="library-page__recent-cover" src={track.cover} alt={`${track.title} cover art`} />
     <div className="library-page__recent-copy">
@@ -134,11 +148,12 @@ const RecentTrackRow = ({ track, index }) => (
       <span>{formatPlayCount(track.plays)}</span>
       <span>{formatDuration(track.duration)}</span>
     </div>
-  </article>
+  </button>
 )
 
 const LibraryPage = () => {
   const [activeFilter, setActiveFilter] = useState('all')
+  const { currentTrack, playTrack } = usePlayer()
 
   const visibleCollections = {
     playlists: activeFilter === 'all' || activeFilter === 'playlists',
@@ -285,7 +300,13 @@ const LibraryPage = () => {
         </div>
         <div className="library-page__recent-list">
           {recentListens.map((track, index) => (
-            <RecentTrackRow key={track.id} track={track} index={index} />
+            <RecentTrackRow
+              key={track.id}
+              track={track}
+              index={index}
+              isActive={currentTrack?.id === track.id}
+              onSelect={(selectedTrack) => playTrack(toPlayerTrack(selectedTrack))}
+            />
           ))}
         </div>
       </section>
