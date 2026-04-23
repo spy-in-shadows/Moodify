@@ -1,3 +1,4 @@
+import { createElement } from 'react'
 import './MediaCard.css'
 
 const MediaCard = ({
@@ -8,18 +9,30 @@ const MediaCard = ({
   meta,
   onClick,
   variant = 'default',
+  className = '',
+  titleAs: TitleTag = 'h3',
+  ariaLabel,
+  ...restProps
 }) => {
   const Wrapper = onClick ? 'button' : 'article'
   const interactiveProps = onClick
     ? { type: 'button', onClick }
     : {}
-
-  const metaLabel = badge ?? meta
+  const cardClassName = [
+    'media-card',
+    `media-card--${variant}`,
+    onClick ? 'media-card--interactive' : '',
+    className,
+  ]
+    .filter(Boolean)
+    .join(' ')
 
   return (
     <Wrapper
-      className={`media-card media-card--${variant}${onClick ? ' media-card--interactive' : ''}`}
+      className={cardClassName}
+      aria-label={ariaLabel}
       {...interactiveProps}
+      {...restProps}
     >
       <div className="media-card__image-wrap">
         {image ? (
@@ -29,11 +42,12 @@ const MediaCard = ({
             {title?.slice(0, 1) ?? 'M'}
           </div>
         )}
-        {metaLabel ? <span className="media-card__badge">{metaLabel}</span> : null}
+        {badge ? <span className="media-card__badge">{badge}</span> : null}
       </div>
 
       <div className="media-card__body">
-        <h3 className="media-card__title">{title}</h3>
+        {meta ? <p className="media-card__meta">{meta}</p> : null}
+        {createElement(TitleTag, { className: 'media-card__title' }, title)}
         {subtitle ? <p className="media-card__subtitle">{subtitle}</p> : null}
       </div>
     </Wrapper>

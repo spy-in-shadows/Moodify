@@ -6,6 +6,8 @@ const ContentRow = ({
   columns = 'auto',
   dense = false,
   as: Tag = 'div',
+  className = '',
+  ...restProps
 }) => {
   const columnClass =
     columns === 'two'
@@ -15,11 +17,14 @@ const ContentRow = ({
         : columns === 'four'
           ? 'content-row--four'
           : 'content-row--auto'
+  const rowClassName = ['content-row', columnClass, dense ? 'content-row--dense' : '', className]
+    .filter(Boolean)
+    .join(' ')
 
   return (
     createElement(
       Tag,
-      { className: `content-row ${columnClass}${dense ? ' content-row--dense' : ''}` },
+      { className: rowClassName, ...restProps },
       children,
     )
   )

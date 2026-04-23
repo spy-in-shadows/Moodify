@@ -1,11 +1,14 @@
 .content-row {
+  --content-row-gap: 1.25rem;
+
   display: grid;
-  gap: 1.25rem;
+  gap: var(--content-row-gap);
   align-items: stretch;
+  grid-auto-rows: 1fr;
 }
 
 .content-row--dense {
-  gap: 0.9rem;
+  --content-row-gap: 0.9rem;
 }
 
 .content-row--auto {
