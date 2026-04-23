@@ -3,13 +3,13 @@
   align-items: end;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1rem;
 }
 
 .section-header__content {
   min-width: 0;
   display: grid;
-  gap: 0.3rem;
+  gap: 0.4rem;
 }
 
 .section-header__title,
@@ -27,8 +27,9 @@
 
 .section-header__subtitle {
   color: var(--color-text-secondary, #b3b3b3);
-  font-size: 0.95rem;
-  line-height: 1.45;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  text-wrap: pretty;
 }
 
 .section-header__aside {
@@ -36,23 +37,33 @@
 }
 
 .section-header__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.25rem;
   color: var(--color-text-secondary, #b3b3b3);
   font-size: 0.84rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  background: none;
-  border: 0;
-  padding: 0;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  padding: 0.45rem 0.8rem;
   cursor: pointer;
   transition:
+    background-color var(--transition-base, 220ms) var(--ease-standard, ease),
+    border-color var(--transition-base, 220ms) var(--ease-standard, ease),
     color var(--transition-base, 220ms) var(--ease-standard, ease),
     transform var(--transition-fast, 140ms) var(--ease-standard, ease);
 }
 
 .section-header__action:hover,
 .section-header__action:focus-visible {
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.14);
   color: var(--color-text-primary, #ffffff);
 }
 

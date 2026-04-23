@@ -190,13 +190,17 @@ const SearchPage = () => {
       : hasQuery
         ? `No matches for "${query.trim()}"`
         : `No ${activeCategory?.label ?? ''} matches yet`
+  const searchSummaryId = 'search-page-summary'
+  const resultsHeadingId = 'search-page-results-heading'
 
   return (
     <main className="search-page">
-      <section className="search-page__hero">
+      <section className="search-page__hero" aria-labelledby="search-page-title">
         <div className="search-page__hero-copy">
           <span className="search-page__eyebrow">Search</span>
-          <h1 className="search-page__title">Find the exact mood, artist, or mix you want.</h1>
+          <h1 className="search-page__title" id="search-page-title">
+            Find the exact mood, artist, or mix you want.
+          </h1>
           <p className="search-page__description">
             Type anything from a song title to a genre tag, then narrow the catalog with
             browse chips built from the local mock data.
@@ -213,6 +217,9 @@ const SearchPage = () => {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search tracks, albums, artists, or playlists"
+              aria-describedby={searchSummaryId}
+              autoComplete="off"
+              spellCheck="false"
             />
           </label>
 
@@ -222,6 +229,7 @@ const SearchPage = () => {
                 type="button"
                 className={`search-page__chip${selectedCategoryId === 'all' ? ' search-page__chip--active' : ''}`}
                 onClick={() => setSelectedCategoryId('all')}
+                aria-pressed={selectedCategoryId === 'all'}
               >
                 All
               </button>
@@ -236,6 +244,7 @@ const SearchPage = () => {
                       currentId === category.id ? 'all' : category.id,
                     )
                   }
+                  aria-pressed={selectedCategoryId === category.id}
                   style={{ '--search-chip-accent': category.color }}
                 >
                   {category.label}
@@ -244,11 +253,14 @@ const SearchPage = () => {
             </div>
 
             <div className="search-page__summary">
-              <span className="search-page__summary-text">{summaryText}</span>
+              <p className="search-page__summary-text" id={searchSummaryId} aria-live="polite">
+                {summaryText}
+              </p>
               {hasActiveFilters ? (
                 <button
                   type="button"
                   className="search-page__clear"
+                  aria-label="Clear the search query and category filters"
                   onClick={() => {
                     setQuery('')
                     setSelectedCategoryId('all')
@@ -286,11 +298,14 @@ const SearchPage = () => {
           {!hasQuery ? (
             <section className="search-page__browse">
               <SectionHeader
-                title="Browse all"
-                subtitle="Start with a mood or activity, then refine with the search bar above."
-              />
+              title="Browse all"
+              subtitle="Start with a mood or activity, then refine with the search bar above."
+            />
               <div className="search-page__browse-grid">
-                {browseCategories.map((category) => (
+                {browseCategories.map((category) => {
+                  const matchCount = countCategoryMatches(category)
+
+                  return (
                   <button
                     key={category.id}
                     type="button"
@@ -300,19 +315,28 @@ const SearchPage = () => {
                         currentId === category.id ? 'all' : category.id,
                       )
                     }
+                    aria-pressed={selectedCategoryId === category.id}
+                    aria-label={`${category.label}, ${matchCount} local matches`}
                     style={{ '--search-card-accent': category.color }}
                   >
                     <span className="search-page__browse-title">{category.label}</span>
                     <span className="search-page__browse-meta">
-                      {countCategoryMatches(category)} local matches
+                      {matchCount} local matches
                     </span>
                   </button>
-                ))}
+                  )
+                })}
               </div>
             </section>
           ) : null}
 
-          <div className="search-page__results">
+          <div
+            className="search-page__results"
+            aria-labelledby={resultsHeadingId}
+          >
+            <h2 className="search-page__results-heading" id={resultsHeadingId}>
+              Search results
+            </h2>
             {sections
               .filter((section) => section.items.length > 0)
               .map((section) => (

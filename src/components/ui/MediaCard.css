@@ -11,10 +11,13 @@
   --media-card-shadow-hover: var(--shadow-md, 0 20px 40px rgba(0, 0, 0, 0.3));
   --media-card-transition: var(--transition-base, 220ms) var(--ease-standard, ease);
 
+  position: relative;
+  isolation: isolate;
   display: grid;
-  gap: 0.9rem;
+  gap: 1rem;
   width: 100%;
   min-width: 0;
+  min-height: 100%;
   padding: 1rem;
   border: 1px solid var(--media-card-border);
   border-radius: var(--media-card-radius);
@@ -35,6 +38,16 @@
   cursor: pointer;
 }
 
+.media-card__image-wrap,
+.media-card__image,
+.media-card__badge {
+  transition:
+    transform var(--media-card-transition),
+    filter var(--media-card-transition),
+    box-shadow var(--media-card-transition),
+    background-color var(--media-card-transition);
+}
+
 .media-card--interactive:hover,
 .media-card--interactive:focus-visible {
   transform: translateY(-4px);
@@ -45,9 +58,19 @@
   box-shadow: var(--media-card-shadow-hover);
 }
 
+.media-card--interactive:hover .media-card__image,
+.media-card--interactive:focus-visible .media-card__image {
+  transform: scale(1.03);
+}
+
+.media-card--interactive:hover .media-card__badge,
+.media-card--interactive:focus-visible .media-card__badge {
+  background: rgba(0, 0, 0, 0.76);
+}
+
 .media-card--interactive:focus-visible {
   outline: 2px solid rgba(29, 185, 84, 0.92);
-  outline-offset: 2px;
+  outline-offset: 3px;
 }
 
 .media-card__image-wrap {
@@ -105,10 +128,12 @@
 
 .media-card__body {
   display: grid;
-  gap: 0.35rem;
+  align-content: start;
+  gap: 0.45rem;
   min-width: 0;
 }
 
+.media-card__meta,
 .media-card__title,
 .media-card__subtitle {
   margin: 0;
@@ -116,11 +141,21 @@
   text-overflow: ellipsis;
 }
 
+.media-card__meta {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
 .media-card__title {
   font-size: 1rem;
   font-weight: 700;
-  line-height: 1.35;
-  white-space: nowrap;
+  line-height: 1.32;
+  white-space: normal;
 }
 
 .media-card__subtitle {
@@ -128,6 +163,7 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   color: var(--media-card-text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.45;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  text-wrap: pretty;
 }
