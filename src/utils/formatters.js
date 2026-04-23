@@ -39,10 +39,3 @@ export const formatPlayCount = (count = 0) => {
 
   return `${safeCount} plays`
 }
-
-export default {
-  formatDuration,
-  formatSubtitle,
-  formatListeners,
-  formatPlayCount,
-}

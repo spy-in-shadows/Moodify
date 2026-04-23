@@ -1,125 +1,108 @@
-# Moodify 🎧
+# Moodify
 
-Moodify is a Spotify-inspired music streaming frontend built using React. It delivers a clean, modern, and responsive UI for browsing songs, albums, artists, and playlists.
+Moodify is a Spotify-inspired React app focused on browsing and exploring music collections through a polished frontend experience. The app is entirely frontend-only and uses local mock data for albums, artists, playlists, tracks, and collection details.
 
----
+## Overview
 
-## 🚀 Features
+The current app includes a multi-page music browsing experience with:
 
-- 🎵 Spotify-inspired modern UI  
-- ⚛️ Built with React  
-- 📱 Fully responsive design  
-- 🔍 Music search interface  
-- 📂 Browse albums, artists, and playlists  
-- ▶️ Music player layout (UI)  
-- 🧩 Modular and reusable components  
-- ⚡ Fast setup using Vite  
+- a home page for featured music discovery
+- a search page with browse categories and filterable results
+- a library page for saved playlists, albums, artists, and recent listens
+- collection detail pages for albums and playlists
+- a persistent player bar powered by shared React context
 
----
+This project does not include a backend, authentication, real Spotify integration, or audio streaming.
 
-## 🛠 Tech Stack
+## Tech Stack
 
-- React  
-- JavaScript  
-- CSS / Module CSS  
-- Vite  
+- React 19
+- React Router DOM 7
+- JavaScript (ES modules)
+- Vite
+- CSS
+- ESLint
 
----
+## Feature List
 
-## 🎯 Purpose
+- Spotify-inspired responsive layout with sidebar, top bar, and sticky player bar
+- Route-based navigation between Home, Search, Library, and collection detail views
+- Mock-data-driven content for tracks, albums, artists, playlists, and browse categories
+- Search and browse flows built from local catalog data
+- Library filtering across playlists, albums, and artists
+- Recent listen interactions that update the shared player context
+- Reusable UI building blocks for cards, rows, and section headers
 
-Moodify was built as a learning project to improve React skills by creating a real-world clone of a music streaming app. The focus is on UI/UX, component structure, and frontend architecture.
+## Frontend-Only Data Model
 
----
+- All app content is sourced from files in `src/data/`
+- Playback UI is simulated through React state in `src/context/PlayerContext.jsx`
+- The player bar reflects selected tracks, but it does not stream or play real audio
 
-## 🧑‍💻 Getting Started
+## Project Structure
+
+```text
+src/
+├── app/                  # Router and shared app shell composition
+├── assets/               # Static assets
+├── components/
+│   ├── player/           # Bottom player bar
+│   ├── sidebar/          # Left navigation
+│   ├── topbar/           # Context-aware page header
+│   └── ui/               # Shared presentational building blocks
+├── context/              # Shared React context for player state
+├── data/                 # Mock music catalog and browse data
+├── pages/
+│   ├── CollectionPage/   # Album and playlist detail views
+│   ├── HomePage/         # Landing and discovery experience
+│   ├── LibraryPage/      # Saved music and recent listens
+│   └── SearchPage/       # Browse and filtered search experience
+├── styles/               # Shared styling primitives
+├── utils/                # Formatting helpers
+├── App.jsx
+└── main.jsx
+```
+
+## Install and Run
 
 ### Prerequisites
 
-- Node.js  
-- npm  
+- Node.js
+- npm
 
-### Installation
+### Local development
 
 ```bash
-git clone https://github.com/your-username/moodify.git
-cd moodify
 npm install
 npm run dev
 ```
 
----
-
-## 📦 Build for Production
+### Production build
 
 ```bash
 npm run build
+```
+
+### Preview the production build locally
+
+```bash
 npm run preview
 ```
 
----
-
-## 📁 Folder Structure
+### Lint
 
 ```bash
-moodify/
-├── public/
-├── src/
-│   ├── assets/
-│   ├── components/
-│   ├── pages/
-│   ├── data/
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── package.json
-└── README.md
+npm run lint
 ```
 
----
+## Notes
 
-## 🌐 GitHub Repository
+- The app is intended as a frontend learning and portfolio project.
+- Content and playback behavior are mock-data-driven.
+- Any future backend, auth, or streaming work would be new functionality and is not part of the current implementation.
 
-🔗 https://github.com/spy-in-shadows/Moodify
+## Contributors
 
----
-
-## 👥 Contributors
-
-- **Krishna Verma**  
-  https://github.com/spy-in-shadows
-
-- **Aniruddha Dwivedi**  
-  https://github.com/Aniruddhadwivedi07
-
-- **Sambuddha Banerjee**  
-  https://github.com/SammyBanner45
-
----
-
-## 🔮 Future Improvements
-
-- 🎧 Integrate real music APIs  
-- 🔐 Add authentication  
-- ▶️ Implement audio playback  
-- ❤️ Add liked songs & library  
-- 📊 Dynamic playlists  
-- ✨ Better animations & transitions  
-- 🌐 Deploy the project  
-
----
-
-## 📚 Learning Outcomes
-
-- React component structuring  
-- Props and state management  
-- UI cloning and design  
-- Responsive layouts  
-- Project organization  
-
----
-
-## 🎨 Inspiration
-
-Inspired by Spotify's design and user experience.  
-This project is created for educational purposes only.
+- [Krishna Verma](https://github.com/spy-in-shadows)
+- [Aniruddha Dwivedi](https://github.com/Aniruddhadwivedi07)
+- [Sambuddha Banerjee](https://github.com/SammyBanner45)
