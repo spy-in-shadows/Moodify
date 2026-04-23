@@ -66,9 +66,61 @@
   line-height: 1.45;
 }
 
+@media (max-width: 900px) {
+  .topbar {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.2rem;
+  }
+
+  .topbar__title {
+    font-size: clamp(1.45rem, 3vw, 1.8rem);
+  }
+
+  .topbar__subtitle {
+    font-size: 0.9rem;
+  }
+}
+
 @media (max-width: 640px) {
   .topbar {
     flex-direction: column;
     align-items: stretch;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1rem;
+  }
+
+  .topbar__nav {
+    gap: 0.5rem;
+  }
+
+  .topbar__nav-button {
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 0.95rem;
+  }
+
+  .topbar__context {
+    gap: 0.2rem;
+  }
+
+  .topbar__title {
+    font-size: 1.35rem;
+    line-height: 1.1;
+  }
+
+  .topbar__subtitle {
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 420px) {
+  .topbar__eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .topbar__title {
+    font-size: 1.2rem;
   }
 }

@@ -1,6 +1,7 @@
 .collection-page {
   display: grid;
   gap: 1.75rem;
+  min-width: 0;
 }
 
 .collection-page__hero {
@@ -74,6 +75,7 @@
 .collection-page__meta {
   color: var(--color-text-muted, #a7adb7);
   font-size: 0.95rem;
+  line-height: 1.55;
 }
 
 .collection-page__chips {
@@ -109,6 +111,7 @@
   grid-template-columns: 56px minmax(0, 2.2fr) minmax(0, 1.4fr) minmax(120px, 1fr) 88px;
   gap: 1rem;
   align-items: center;
+  min-width: 0;
 }
 
 .collection-page__table-header {
@@ -186,13 +189,38 @@
   line-height: 1.6;
 }
 
+@media (max-width: 1120px) {
+  .collection-page {
+    gap: 1.5rem;
+  }
+
+  .collection-page__hero {
+    grid-template-columns: minmax(160px, 240px) minmax(0, 1fr);
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+
+  .collection-page__tracks {
+    padding: 1.25rem;
+  }
+}
+
 @media (max-width: 900px) {
   .collection-page__hero {
     grid-template-columns: 1fr;
+    align-items: start;
   }
 
   .collection-page__cover-wrap {
     max-width: 220px;
+  }
+
+  .collection-page__body {
+    gap: 0.85rem;
+  }
+
+  .collection-page__title {
+    font-size: clamp(2rem, 7vw, 3rem);
   }
 
   .collection-page__table-header,
@@ -213,6 +241,24 @@
     padding: 1.25rem;
   }
 
+  .collection-page__hero {
+    gap: 1rem;
+  }
+
+  .collection-page__cover-wrap {
+    max-width: 180px;
+  }
+
+  .collection-page__title {
+    font-size: 1.8rem;
+  }
+
+  .collection-page__description,
+  .collection-page__meta,
+  .collection-page__empty-text {
+    font-size: 0.92rem;
+  }
+
   .collection-page__table-header,
   .collection-page__track {
     grid-template-columns: 40px minmax(0, 1fr) 72px;
@@ -222,5 +268,52 @@
   .collection-page__track-context,
   .collection-page__table-context {
     display: none;
+  }
+
+  .collection-page__track {
+    padding: 0.75rem 0;
+  }
+
+  .collection-page__track-title,
+  .collection-page__track-subtitle,
+  .collection-page__track-context-title {
+    white-space: normal;
+  }
+}
+
+@media (max-width: 420px) {
+  .collection-page {
+    gap: 1.25rem;
+  }
+
+  .collection-page__hero,
+  .collection-page__tracks,
+  .collection-page__empty {
+    padding: 1rem;
+    border-radius: 1rem;
+  }
+
+  .collection-page__cover-wrap {
+    max-width: 144px;
+  }
+
+  .collection-page__chips {
+    gap: 0.5rem;
+  }
+
+  .collection-page__chip {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
+
+  .collection-page__table-header,
+  .collection-page__track {
+    grid-template-columns: 32px minmax(0, 1fr) 58px;
+    gap: 0.6rem;
+  }
+
+  .collection-page__track-duration,
+  .collection-page__track-index {
+    font-size: 0.82rem;
   }
 }

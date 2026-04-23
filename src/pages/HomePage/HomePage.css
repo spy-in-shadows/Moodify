@@ -1,6 +1,7 @@
 .home-page {
   display: grid;
   gap: 2.5rem;
+  min-width: 0;
 }
 
 .home-page__hero {
@@ -106,23 +107,81 @@
   gap: 0.25rem;
 }
 
+@media (max-width: 1120px) {
+  .home-page {
+    gap: 2.25rem;
+  }
+
+  .home-page__hero {
+    grid-template-columns: minmax(0, 1.4fr) minmax(16rem, 0.95fr);
+    padding: 1.75rem;
+  }
+
+  .home-page__title {
+    font-size: clamp(2.1rem, 4vw, 3.5rem);
+  }
+}
+
 @media (max-width: 960px) {
   .home-page__hero {
     grid-template-columns: 1fr;
+    gap: 1.25rem;
   }
 
   .home-page__hero-copy {
     max-width: none;
   }
+
+  .home-page__hero-panel {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+  }
 }
 
 @media (max-width: 640px) {
   .home-page {
-    gap: 2rem;
+    gap: 1.75rem;
   }
 
   .home-page__hero {
+    gap: 1rem;
     padding: 1.5rem;
     border-radius: 1.25rem;
+  }
+
+  .home-page__title {
+    font-size: 1.95rem;
+  }
+
+  .home-page__description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .home-page__hero-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page__stat {
+    padding: 0.9rem 1rem;
+  }
+
+  .home-page__stat-value {
+    font-size: 1.45rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-page__hero {
+    padding: 1.1rem;
+    border-radius: 1rem;
+  }
+
+  .home-page__eyebrow {
+    font-size: 0.72rem;
+  }
+
+  .home-page__title {
+    font-size: 1.7rem;
   }
 }
