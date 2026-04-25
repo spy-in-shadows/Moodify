@@ -47,8 +47,8 @@
 .library-page__hero-copy h1 {
   max-width: 12ch;
   margin-top: var(--space-3);
-  font-size: clamp(2.5rem, 6vw, 4.6rem);
-  line-height: 0.96;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  line-height: 0.98;
 }
 
 .library-page__hero-copy p {
@@ -82,9 +82,12 @@
 
 .library-page__filter-pill--active {
   border-color: transparent;
-  background: linear-gradient(135deg, var(--color-accent), #45e0a5);
+  background: linear-gradient(135deg, var(--color-accent), #3dd68c);
   color: #041108;
-  box-shadow: 0 16px 30px rgba(29, 185, 84, 0.28);
+  box-shadow: 0 8px 24px rgba(29, 185, 84, 0.32);
+  transition:
+    box-shadow var(--transition-base) var(--ease-standard),
+    transform var(--transition-fast) var(--ease-standard);
 }
 
 .library-page__liked-card {

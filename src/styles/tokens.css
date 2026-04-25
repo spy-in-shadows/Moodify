@@ -1,27 +1,31 @@
 :root {
   color-scheme: dark;
 
-  --font-sans: "Circular Std", "Inter", "Segoe UI", system-ui, -apple-system,
-    BlinkMacSystemFont, "Helvetica Neue", sans-serif;
+  /* Typography */
+  --font-sans: 'Merriweather', 'Georgia', 'Times New Roman',
+    BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
 
-  --color-bg-canvas: #090b0d;
+  --color-bg-canvas: #000000;
   --color-bg-app: #121212;
-  --color-bg-subtle: #171a1f;
-  --color-surface-1: #161b22;
-  --color-surface-2: #1d232c;
-  --color-surface-3: #252d38;
+  --color-bg-subtle: #181818;
 
-  --color-text-primary: #f5f7fa;
-  --color-text-secondary: #c4ccd6;
-  --color-text-muted: #8b95a3;
+  --color-surface-1: #181818;
+  --color-surface-2: #242424;
+  --color-surface-3: #2e2e2e;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #a7a7a7;
+  --color-text-muted: #6a6a6a;
 
-  --color-accent: #1db954;
-  --color-accent-strong: #1ed760;
+  --color-accent: #1ed760;
+  --color-accent-strong: #1db954;
+  --color-accent-dim: rgba(30, 215, 96, 0.12);
 
-  --color-border-subtle: rgba(255, 255, 255, 0.08);
-  --color-border-strong: rgba(255, 255, 255, 0.16);
+  --color-border-subtle: rgba(255, 255, 255, 0.07);
+  --color-border-strong: rgba(255, 255, 255, 0.14);
 
-  --space-0: 0;
+  /* Topbar glassmorphism background */
+  --color-topbar-bg: rgba(24, 24, 24, 0.88);
+
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -32,24 +36,23 @@
   --space-8: 2.5rem;
   --space-9: 3rem;
   --space-10: 4rem;
-  --space-11: 5rem;
 
-  --radius-sm: 0.5rem;
-  --radius-md: 0.75rem;
-  --radius-lg: 1rem;
-  --radius-xl: 1.5rem;
-  --radius-pill: 999px;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-pill: 9999px;
 
-  --shadow-sm: 0 10px 30px rgba(0, 0, 0, 0.16);
-  --shadow-md: 0 18px 48px rgba(0, 0, 0, 0.24);
-  --shadow-lg: 0 24px 64px rgba(0, 0, 0, 0.32);
-
-  --transition-fast: 150ms;
-  --transition-base: 240ms;
-  --transition-slow: 360ms;
-  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.6);
+  --transition-fast: 120ms;
+  --transition-base: 200ms;
+  --transition-slow: 320ms;
+  --ease-standard: cubic-bezier(0.3, 0, 0.4, 1);
   --ease-emphasized: cubic-bezier(0.2, 0.8, 0.2, 1);
 
-  --container-max: 1200px;
-  --container-gutter: clamp(var(--space-4), 4vw, var(--space-8));
+  --sidebar-width: 248px;
+  --player-height: 92px;
+  --topbar-height: 64px;
 }

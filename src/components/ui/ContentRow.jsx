@@ -16,7 +16,9 @@ const ContentRow = ({
         ? 'content-row--three'
         : columns === 'four'
           ? 'content-row--four'
-          : 'content-row--auto'
+          : columns === 'five'
+            ? 'content-row--five'
+            : 'content-row--auto'
   const rowClassName = ['content-row', columnClass, dense ? 'content-row--dense' : '', className]
     .filter(Boolean)
     .join(' ')

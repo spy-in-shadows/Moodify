@@ -1,126 +1,138 @@
+/* ─── Topbar ─────────────────────────────────────────────────────────────── */
 .topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  gap: 1.25rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  gap: var(--space-4);
+  height: var(--topbar-height, 64px);
+  padding: 0 var(--space-7);
+  /* glassmorphism — blurs content scrolling under the bar */
+  background-color: var(--color-topbar-bg, rgba(24, 24, 24, 0.88));
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
 }
 
+/* ─── Left — history arrows ──────────────────────────────────────────────── */
 .topbar__nav {
-  display: inline-flex;
-  gap: 0.75rem;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
   flex-shrink: 0;
 }
 
 .topbar__nav-button {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 32px;
+  height: 32px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.04);
-  color: rgba(255, 255, 255, 0.72);
-  font-size: 1rem;
+  color: var(--color-text-primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition:
+    background-color var(--transition-fast) var(--ease-standard),
+    transform var(--transition-fast) var(--ease-standard);
+}
+
+.topbar__nav-button:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.12);
+  transform: scale(1.05);
 }
 
 .topbar__nav-button:disabled {
-  cursor: not-allowed;
-  opacity: 0.7;
+  opacity: 0.35;
+  cursor: default;
 }
 
+/* ─── Center — page title ────────────────────────────────────────────────── */
 .topbar__context {
-  min-width: 0;
   flex: 1;
-  display: grid;
-  gap: 0.25rem;
-}
-
-.topbar__eyebrow,
-.topbar__title,
-.topbar__subtitle {
-  margin: 0;
-}
-
-.topbar__eyebrow {
-  color: var(--color-text-muted, #a7adb7);
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
 }
 
 .topbar__title {
-  color: var(--color-text-primary, #ffffff);
-  font-size: clamp(1.6rem, 2vw, 2rem);
+  margin: 0;
+  font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
+/* ─── Right — user / actions ─────────────────────────────────────────────── */
+.topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-shrink: 0;
+}
+
+.topbar__avatar {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--color-surface-3);
+  color: var(--color-text-primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  cursor: pointer;
+  border: 1.5px solid rgba(255, 255, 255, 0.1);
+  transition: transform var(--transition-fast) var(--ease-standard),
+    border-color var(--transition-fast) var(--ease-standard);
+}
+
+.topbar__avatar:hover {
+  transform: scale(1.06);
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+/* These elements are kept in DOM but not visible in the current design */
+.topbar__eyebrow,
 .topbar__subtitle {
-  color: var(--color-text-secondary, #c3c7ce);
-  font-size: 0.95rem;
-  line-height: 1.45;
+  display: none;
 }
 
+/* ─── Responsive ─────────────────────────────────────────────────────────── */
 @media (max-width: 900px) {
   .topbar {
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 1.2rem;
-  }
-
-  .topbar__title {
-    font-size: clamp(1.45rem, 3vw, 1.8rem);
-  }
-
-  .topbar__subtitle {
-    font-size: 0.9rem;
-  }
-}
-
-@media (max-width: 640px) {
-  .topbar {
-    flex-direction: column;
-    align-items: stretch;
-    margin-bottom: 1.25rem;
-    padding-bottom: 1rem;
-  }
-
-  .topbar__nav {
-    gap: 0.5rem;
-  }
-
-  .topbar__nav-button {
-    width: 2.25rem;
-    height: 2.25rem;
-    font-size: 0.95rem;
-  }
-
-  .topbar__context {
-    gap: 0.2rem;
-  }
-
-  .topbar__title {
-    font-size: 1.35rem;
-    line-height: 1.1;
-  }
-
-  .topbar__subtitle {
-    font-size: 0.88rem;
-    line-height: 1.5;
-  }
-}
-
-@media (max-width: 420px) {
-  .topbar__eyebrow {
-    font-size: 0.72rem;
+    padding: 0 var(--space-5);
+    height: 56px;
   }
 
   .topbar__title {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .topbar {
+    padding: 0 var(--space-4);
+  }
+
+  .topbar__title {
+    font-size: 1.05rem;
+  }
+
+  .topbar__nav-button {
+    width: 28px;
+    height: 28px;
+    font-size: 0.9rem;
   }
 }

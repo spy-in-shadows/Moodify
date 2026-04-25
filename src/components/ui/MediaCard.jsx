@@ -1,4 +1,5 @@
 import { createElement } from 'react'
+import { usePlayer } from '../../context/PlayerContext.jsx'
 import './MediaCard.css'
 
 const MediaCard = ({
@@ -7,6 +8,7 @@ const MediaCard = ({
   subtitle,
   badge,
   meta,
+  track,           // optional track object to pass to player on click
   onClick,
   variant = 'default',
   className = '',
@@ -14,14 +16,27 @@ const MediaCard = ({
   ariaLabel,
   ...restProps
 }) => {
-  const Wrapper = onClick ? 'button' : 'article'
-  const interactiveProps = onClick
-    ? { type: 'button', onClick }
+  const { playTrack } = usePlayer()
+
+  const handleClick = () => {
+    if (track) {
+      playTrack(track)
+    }
+    if (onClick) {
+      onClick()
+    }
+  }
+
+  const isInteractive = Boolean(onClick || track)
+  const Wrapper = isInteractive ? 'button' : 'article'
+  const interactiveProps = isInteractive
+    ? { type: 'button', onClick: handleClick }
     : {}
+
   const cardClassName = [
     'media-card',
     `media-card--${variant}`,
-    onClick ? 'media-card--interactive' : '',
+    isInteractive ? 'media-card--interactive' : '',
     className,
   ]
     .filter(Boolean)
@@ -30,19 +45,28 @@ const MediaCard = ({
   return (
     <Wrapper
       className={cardClassName}
-      aria-label={ariaLabel}
+      aria-label={ariaLabel ?? title}
       {...interactiveProps}
       {...restProps}
     >
       <div className="media-card__image-wrap">
         {image ? (
-          <img className="media-card__image" src={image} alt={title} />
+          <img
+            className="media-card__image"
+            src={image}
+            alt={title}
+            loading="lazy"
+          />
         ) : (
           <div className="media-card__image media-card__image--placeholder" aria-hidden="true">
             {title?.slice(0, 1) ?? 'M'}
           </div>
         )}
+
         {badge ? <span className="media-card__badge">{badge}</span> : null}
+
+        {/* Play overlay — always rendered, shown via CSS on hover */}
+        <div className="media-card__play" aria-hidden="true" />
       </div>
 
       <div className="media-card__body">

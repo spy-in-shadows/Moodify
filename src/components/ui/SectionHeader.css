@@ -1,15 +1,16 @@
 .section-header {
   display: flex;
-  align-items: end;
+  align-items: center;
   justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1rem;
+  gap: var(--space-4, 1rem);
+  margin-bottom: var(--space-3, 0.75rem);
 }
 
 .section-header__content {
   min-width: 0;
-  display: grid;
-  gap: 0.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
 
 .section-header__title,
@@ -18,18 +19,17 @@
 }
 
 .section-header__title {
-  color: var(--color-text-primary, #ffffff);
-  font-size: clamp(1.35rem, 2vw, 1.75rem);
-  font-weight: 800;
-  line-height: 1.15;
+  color: var(--color-text-primary, #fff);
+  font-size: 1.3rem;
+  font-weight: 700;
   letter-spacing: -0.02em;
+  line-height: 1.25;
 }
 
 .section-header__subtitle {
   color: var(--color-text-secondary, #b3b3b3);
-  font-size: 0.92rem;
-  line-height: 1.55;
-  text-wrap: pretty;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 .section-header__aside {
@@ -39,43 +39,37 @@
 .section-header__action {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  min-height: 2.25rem;
-  color: var(--color-text-secondary, #b3b3b3);
-  font-size: 0.84rem;
+  font-size: 0.76rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+  color: var(--color-text-secondary, #b3b3b3);
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 999px;
-  padding: 0.45rem 0.8rem;
   cursor: pointer;
-  transition:
-    background-color var(--transition-base, 220ms) var(--ease-standard, ease),
-    border-color var(--transition-base, 220ms) var(--ease-standard, ease),
-    color var(--transition-base, 220ms) var(--ease-standard, ease),
-    transform var(--transition-fast, 140ms) var(--ease-standard, ease);
+  background: none;
+  border: none;
+  padding: var(--space-2, 0.5rem) 0;
+  transition: color var(--transition-fast, 120ms) var(--ease-standard);
 }
 
 .section-header__action:hover,
 .section-header__action:focus-visible {
-  transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(255, 255, 255, 0.14);
-  color: var(--color-text-primary, #ffffff);
+  color: var(--color-text-primary, #fff);
+  text-decoration: underline;
 }
 
 .section-header__action:focus-visible {
-  outline: 2px solid rgba(29, 185, 84, 0.92);
-  outline-offset: 4px;
-  border-radius: 0.35rem;
+  outline: 2px solid var(--color-accent, #1ed760);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 560px) {
   .section-header {
-    align-items: start;
-    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .section-header__title {
+    font-size: 1.2rem;
   }
 }
