@@ -31,7 +31,6 @@ const Topbar = () => {
 
   return (
     <header className="topbar" aria-label="Top navigation">
-      {/* History nav */}
       <div className="topbar__nav" aria-label="History navigation">
         <button
           className="topbar__nav-button"
@@ -50,16 +49,11 @@ const Topbar = () => {
           ›
         </button>
       </div>
-
-      {/* Page title */}
       <div className="topbar__context">
         <h1 className="topbar__title">{title}</h1>
-        {/* Hidden — kept for SSR/SEO semantics on non-home pages */}
         <span className="topbar__eyebrow" aria-hidden="true" />
         <span className="topbar__subtitle" aria-hidden="true" />
       </div>
-
-      {/* Actions */}
       <div className="topbar__actions">
         <div className="topbar__avatar" role="button" aria-label="User profile" tabIndex={0}>
           M

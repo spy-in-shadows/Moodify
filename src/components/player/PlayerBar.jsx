@@ -26,8 +26,6 @@ const PlayerBar = () => {
 
   return (
     <footer className="player-bar" aria-label="Playback controls">
-
-      {/* ── Left: track info ── */}
       <div className="player-bar__track">
         {hasTrack ? (
           <img
@@ -52,21 +50,14 @@ const PlayerBar = () => {
           </button>
         )}
       </div>
-
-      {/* ── Center: controls + progress ── */}
       <div className="player-bar__center">
         <div className="player-bar__controls" aria-label="Track controls">
-          {/* Shuffle */}
           <button className="player-bar__icon-button" type="button" aria-label="Shuffle" disabled>
             ⇄
           </button>
-
-          {/* Previous */}
           <button className="player-bar__icon-button" type="button" aria-label="Previous" disabled>
             |◂
           </button>
-
-          {/* Play / Pause */}
           <button
             className="player-bar__play-button"
             type="button"
@@ -76,19 +67,13 @@ const PlayerBar = () => {
           >
             {isPlaying ? '❚❚' : '▶'}
           </button>
-
-          {/* Next */}
           <button className="player-bar__icon-button" type="button" aria-label="Next" disabled>
             ▸|
           </button>
-
-          {/* Repeat */}
           <button className="player-bar__icon-button" type="button" aria-label="Repeat" disabled>
             ↺
           </button>
         </div>
-
-        {/* Progress bar */}
         <div className="player-bar__timeline" aria-hidden="true">
           <span className="player-bar__time">0:00</span>
           <div className="player-bar__progress">
@@ -97,15 +82,12 @@ const PlayerBar = () => {
           <span className="player-bar__time">{duration}</span>
         </div>
       </div>
-
-      {/* ── Right: volume ── */}
       <div className="player-bar__volume" aria-label="Volume control">
         <span className="player-bar__volume-icon" aria-hidden="true">🔈</span>
         <div className="player-bar__volume-track" aria-hidden="true">
           <div className="player-bar__volume-fill" />
         </div>
       </div>
-
     </footer>
   )
 }

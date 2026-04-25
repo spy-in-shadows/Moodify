@@ -22,13 +22,10 @@ const libraryItems = [
 const Sidebar = () => {
   return (
     <aside className="sidebar" aria-label="Primary navigation">
-      {/* Brand */}
       <div className="sidebar__brand">
         <div className="sidebar__brand-logo" aria-hidden="true">♪</div>
         <span className="sidebar__brand-name">Moodify</span>
       </div>
-
-      {/* Main nav links */}
       <nav className="sidebar__nav" aria-label="Main">
         {navItems.map(({ to, label, end, icon }) => (
           <NavLink
@@ -44,8 +41,6 @@ const Sidebar = () => {
           </NavLink>
         ))}
       </nav>
-
-      {/* Library section */}
       <section className="sidebar__library" aria-label="Your Library">
         <div className="sidebar__library-header">
           <span className="sidebar__library-title">

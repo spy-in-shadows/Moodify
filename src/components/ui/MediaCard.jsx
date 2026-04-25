@@ -8,7 +8,7 @@ const MediaCard = ({
   subtitle,
   badge,
   meta,
-  track,           // optional track object to pass to player on click
+  track,
   onClick,
   variant = 'default',
   className = '',
@@ -64,8 +64,6 @@ const MediaCard = ({
         )}
 
         {badge ? <span className="media-card__badge">{badge}</span> : null}
-
-        {/* Play overlay — always rendered, shown via CSS on hover */}
         <div className="media-card__play" aria-hidden="true" />
       </div>
 

@@ -109,10 +109,10 @@ const SearchPage = () => {
   const sections = [
     {
       id: 'tracks',
-      title: hasActiveFilters ? 'Tracks' : 'Trending Tracks',
+      title: hasActiveFilters ? 'Tracks' : 'Trending in India',
       subtitle: hasActiveFilters
         ? 'Songs matching your current search and browse filters.'
-        : 'Top local tracks to start your search journey.',
+        : 'A quick mix of Bollywood, Punjabi pop, and indie songs people keep replaying.',
       items: hasActiveFilters ? filteredTracks : sortedTracks.slice(0, 6),
       renderCard: (track) => (
         <MediaCard
@@ -126,10 +126,10 @@ const SearchPage = () => {
     },
     {
       id: 'albums',
-      title: hasActiveFilters ? 'Albums' : 'Browse Albums',
+      title: hasActiveFilters ? 'Albums' : 'Popular Soundtracks & Albums',
       subtitle: hasActiveFilters
         ? 'Albums pulled from title, artist, mood, and related track matches.'
-        : 'Recent releases and catalog favorites across the mock library.',
+        : 'Soundtracks, indie records, and desi pop albums from the local catalog.',
       items: hasActiveFilters ? filteredAlbums : sortedAlbums.slice(0, 4),
       renderCard: (album) => (
         <MediaCard
@@ -143,10 +143,10 @@ const SearchPage = () => {
     },
     {
       id: 'artists',
-      title: hasActiveFilters ? 'Artists' : 'Popular Artists',
+      title: hasActiveFilters ? 'Artists' : 'Popular Indian Artists',
       subtitle: hasActiveFilters
         ? 'Artists matching names, genres, and related browse themes.'
-        : 'A quick way to jump into the voices shaping the catalog.',
+        : 'A quick way to jump into the voices shaping this Indian music catalog.',
       items: hasActiveFilters ? filteredArtists : sortedArtists.slice(0, 4),
       renderCard: (artist) => (
         <MediaCard
@@ -161,10 +161,10 @@ const SearchPage = () => {
     },
     {
       id: 'playlists',
-      title: hasActiveFilters ? 'Playlists' : 'Moodify Playlists',
+      title: hasActiveFilters ? 'Playlists' : 'Desi Playlists',
       subtitle: hasActiveFilters
         ? 'Editorial playlists filtered by themes, descriptions, and matching tracks.'
-        : 'Ready-made mixes organized by mood, time of day, and momentum.',
+        : 'Ready-made mixes for romance, heartbreak, gym sessions, and late drives.',
       items: hasActiveFilters ? filteredPlaylists : sortedPlaylists.slice(0, 4),
       renderCard: (playlist) => (
         <MediaCard
@@ -182,7 +182,7 @@ const SearchPage = () => {
 
   const summaryText = hasActiveFilters
     ? `${totalMatches} result${totalMatches === 1 ? '' : 's'} across tracks, albums, artists, and playlists`
-    : 'Browse the catalog by mood, genre, artist, playlist, or album'
+    : 'Browse by mood, artist, soundtrack, playlist, or genre from the Indian catalog'
 
   const noResultsTitle =
     hasQuery && activeCategory
@@ -202,8 +202,8 @@ const SearchPage = () => {
             Find the exact mood, artist, or mix you want.
           </h1>
           <p className="search-page__description">
-            Type anything from a song title to a genre tag, then narrow the catalog with
-            browse chips built from the local mock data.
+            Search Bollywood songs, Punjabi pop, indie favorites, and mood-based playlists
+            from the local catalog.
           </p>
         </div>
 
@@ -216,7 +216,7 @@ const SearchPage = () => {
               type="search"
               value={query}
               onChange={(event) => setQuery(event.target.value)}
-              placeholder="Search tracks, albums, artists, or playlists"
+              placeholder="Search songs, artists, albums, or playlists"
               aria-describedby={searchSummaryId}
               autoComplete="off"
               spellCheck="false"

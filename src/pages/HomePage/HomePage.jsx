@@ -6,7 +6,6 @@ import { artistsById, spotlightArtistIds } from '../../data/artists.js'
 import { playlists } from '../../data/playlists.js'
 import './HomePage.css'
 
-// Data slices
 const quickTiles     = playlists.slice(0, 6)
 const featuredSets   = playlists.slice(0, 5)
 const trendingAlbums = newReleaseAlbumIds.map((id) => albumsById[id]).filter(Boolean)
@@ -15,8 +14,6 @@ const popularArtists = spotlightArtistIds.map((id) => artistsById[id]).filter(Bo
 const HomePage = () => {
   return (
     <main className="home-page">
-
-      {/* ── Quick-access grid ── */}
       <section className="home-page__quick" aria-label="Quick picks">
         {quickTiles.map((playlist) => (
           <div key={playlist.id} className="home-page__quick-tile">
@@ -32,8 +29,6 @@ const HomePage = () => {
           </div>
         ))}
       </section>
-
-      {/* ── Featured Playlists ── */}
       <section className="home-page__section">
         <SectionHeader
           title="Featured for You"
@@ -51,11 +46,9 @@ const HomePage = () => {
           ))}
         </ContentRow>
       </section>
-
-      {/* ── New Releases ── */}
       <section className="home-page__section">
         <SectionHeader
-          title="New Releases"
+          title="Trending in India"
           actionLabel="Show all"
           onAction={() => {}}
         />
@@ -71,11 +64,9 @@ const HomePage = () => {
           ))}
         </ContentRow>
       </section>
-
-      {/* ── Artists to Follow ── */}
       <section className="home-page__section">
         <SectionHeader
-          title="Artists to Follow"
+          title="Popular Indian Artists"
           actionLabel="Show all"
           onAction={() => {}}
         />
@@ -91,7 +82,6 @@ const HomePage = () => {
           ))}
         </ContentRow>
       </section>
-
     </main>
   )
 }

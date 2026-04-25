@@ -143,7 +143,6 @@
   text-align: center;
 }
 
-/* Show a play icon on the index cell when the row is hovered */
 .collection-page__track:hover .collection-page__track-index {
   color: var(--color-text-primary, #fff);
 }

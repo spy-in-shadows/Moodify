@@ -125,7 +125,6 @@ hr {
   border-top: 1px solid var(--color-border-subtle);
 }
 
-/* Thin scrollbar */
 * {
   scrollbar-width: thin;
   scrollbar-color: var(--color-surface-3) transparent;
